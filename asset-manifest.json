@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Praktikakohvik-2023/static/css/main.c9f0fb01.css",
-    "main.js": "/Praktikakohvik-2023/static/js/main.735a59d6.js",
+    "main.js": "/Praktikakohvik-2023/static/js/main.c570922f.js",
     "static/js/787.d8261684.chunk.js": "/Praktikakohvik-2023/static/js/787.d8261684.chunk.js",
     "static/media/praktikakohvik2019.jpg": "/Praktikakohvik-2023/static/media/praktikakohvik2019.ee9bb563fd78b38b93d6.jpg",
     "static/media/Praktikakohvik_käed.svg": "/Praktikakohvik-2023/static/media/Praktikakohvik_käed.a7a272c95af1722735c8fd11b69c53ba.svg",
@@ -19,11 +19,11 @@
     "static/media/ituk.svg": "/Praktikakohvik-2023/static/media/ituk.3137fddb03fcd53502124b55072a5969.svg",
     "static/media/geo-alt-fill.svg": "/Praktikakohvik-2023/static/media/geo-alt-fill.74cbbebd84c14464737336f23c4d96a4.svg",
     "main.c9f0fb01.css.map": "/Praktikakohvik-2023/static/css/main.c9f0fb01.css.map",
-    "main.735a59d6.js.map": "/Praktikakohvik-2023/static/js/main.735a59d6.js.map",
+    "main.c570922f.js.map": "/Praktikakohvik-2023/static/js/main.c570922f.js.map",
     "787.d8261684.chunk.js.map": "/Praktikakohvik-2023/static/js/787.d8261684.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.c9f0fb01.css",
-    "static/js/main.735a59d6.js"
+    "static/js/main.c570922f.js"
   ]
 }
