@@ -1,0 +1,80 @@
+@font-face{
+	src: url(./fonts/Gilroy-Light.otf);
+	font-family: GilroyL;
+}
+
+@font-face{
+	src: url(./fonts/Gilroy-ExtraBold.otf);
+	font-family: GilroyEB;
+}
+
+body{
+	height: 100%;
+	margin:0;
+	padding:0;
+	background: rgb(15,13,27);
+	background: linear-gradient(90deg, #170954 9%, #312ebd 95%);
+	font-family: GilroyL;
+}
+
+h1, h2, h3, h4{
+	margin: 0;
+	color: white;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+a{
+	padding-left: 10px;
+}
+
+h1{
+	float: left;
+	padding-right: 0;
+	padding-top: 7px;
+	font-size: 32px;
+}
+
+h2{
+	font-size: 18px;
+	font-weight: normal;
+}
+
+h2:not(nav h2, .countdown h2, .firms-info h2, .firms-list h2, .boxedd h2){
+	text-align: justify;
+}
+
+h3{
+	font-size: 25px;
+}
+
+h4{
+	font-family: GilroyEB;
+	font-weight: 1000;
+	letter-spacing: 8px;
+	line-height: 90%;
+	font-size: 100px;
+	padding-top: 50px;
+	padding-bottom: 10px;
+}
+
+@media all and (max-width: 983px){
+	h2:not(nav h2, .countdown h2) {
+    	text-align: left;
+	}
+
+	h1{
+		padding: 0;
+		text-align: center;
+		font-size: 30px;
+		flex: 0 0 100%;
+		height: 25px;
+	}
+}
+
+@media all and (max-width: 700px){
+	h1{
+		height: 15px;
+		font-size: 20px;
+	}
+}

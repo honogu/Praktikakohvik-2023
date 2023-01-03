@@ -1,0 +1,38 @@
+svg {
+	position: absolute;
+	z-index: -1;
+}
+
+.container-main{
+	height: 100%;
+	padding-top: 50px;
+	width: 90%;
+  	margin: 0 auto;
+	max-width: 1920px;
+}
+
+.container-text {
+	background-color: rgba(48, 46, 189, 0.71);
+	padding: 40px;
+}
+
+@media all and (max-width: 983px){
+	.container-main{
+		width: 100%;
+	}
+
+	.container-text {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+@media all and (max-width: 700px){
+	.container-main h1:not(.countdown h1), .container-main h2:not(.countdown h2, .firms-info h2), .container-main h3:not(.countdown h3){
+		font-size: 80%;
+	}
+
+	.container-main{
+		margin: 0;
+	}
+}

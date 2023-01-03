@@ -1,0 +1,33 @@
+.container-fb{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.container-fb a{
+    margin-left: auto;
+    margin-right: auto;
+    width: 60%;
+    max-width: 500px;
+    height: auto;
+    transition: 0.1s;
+}
+
+.container-fb a:hover{
+    transform: scale(1);
+    /*width: 61%;*/
+    max-width: 515px;
+}
+
+.container-fb img{
+    width: 100%;
+    height: auto;
+    transition: 0.1s;
+}
+
+.container-fb img:hover{
+    opacity: 0.9;
+    box-shadow: rgba(196, 204, 211, 0.37) 0px 8px 24px;
+}

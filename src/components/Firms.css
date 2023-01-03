@@ -1,0 +1,215 @@
+.container-firms{
+	width: 100%;
+	margin-top: 60px;
+	margin-bottom: 60px;
+	overflow: hidden;
+}
+
+.firms-list{
+	float: left;
+	max-width: 222px;
+	margin: 0;
+}
+
+.firms-list li:hover{
+	background-color: #FF0063;
+	transition: 0.2s;
+}
+
+.firms-list button{
+	cursor: pointer;
+	background-color: transparent;
+	border: none;
+	width: 100%;
+}
+
+.firms-list h2{
+	text-align: left;
+	font-weight: 200;
+	border-bottom: 1px solid #FF0063;
+}
+
+.firms-list h3{
+	padding-left: 10px;
+	padding-right: 0;
+}
+
+ul h2, ul button, ul{
+	list-style-type: none;
+	font-weight: bold;
+	padding: 0;
+	padding-left: 4px;
+}
+
+.firms-info{
+	grid-column: 1;
+	grid-row: 1;
+	margin-left: 22px;
+	margin-right: 5px;
+	height: min-content;
+}
+
+.firms-info h2{
+	padding-left: 2px;
+	padding-right: 2px;
+	text-align: left;
+	font-size: 19px;
+	padding-bottom: 50px;
+	white-space: pre-wrap;
+	word-wrap:break-word;
+	text-overflow: ellipsis; 
+}
+
+.image-container{
+	border-radius: 7px;
+	margin-left: auto;
+    margin-right: auto;
+	margin-bottom: 20px;
+	width: 100%;
+	max-width: 300px;
+	aspect-ratio: 3.5 / 1;
+	border: solid;
+	border-left: solid 15px;
+	border-right: solid 15px;
+	border-color: white;
+	background-color:  white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.firms-info img{
+	max-width:100%;
+	max-height:100%;
+	height: auto;
+}
+
+#sideways{
+	transform: rotate(90deg);
+	font-weight: 600;
+	font-size: 1.2vw;
+}
+
+#sideways:hover{
+	color: #FF0063;
+	transition: 0.2s;
+}
+
+.firms-map{
+	grid-column: 2;
+	grid-row: 1;
+	position: relative;
+	height: min-content;
+}
+
+.firms-map img{
+	position: absolute;
+	width: 100%;
+	height: auto;
+}
+
+.aspect-ratio-box{
+	height: 0;
+	overflow: hidden;
+	padding-top: calc(68/81*100%);
+	position: relative;
+}
+
+.container-map{
+	list-style-type: none;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	display: grid;
+	grid-template-columns: 17% 12% 12% 12% 12% 12% 12% 7% 4%;
+	grid-template-rows: 4fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 2fr;
+}
+
+.container-grid{
+	display: grid;
+	grid-template-columns: 50% auto;
+	line-height: 1.1;
+}
+
+.container-map li{
+	padding: 1px;
+	display: flex;
+	flex: 1;
+}
+
+.container-map button{
+	padding: 0;
+	cursor: pointer;
+	font-weight: 600;
+	display: flex;
+	flex: 1;
+	justify-content: center;
+	align-items: center;
+	border: 1px;
+	border: solid;
+	color: white;
+    font-size: 1.2vw;
+	border-radius: 4px;
+	border-color: #FF0063;
+	background-color: #FF0063;
+}
+
+.container-map button:hover{
+	background-color: white;
+	color: #FF0063;
+	transition: 0.2s;
+}
+
+.container-map h2:not(#sideways){
+	text-align: center;
+	color: white;
+}
+
+@media all and (max-width: 983px){
+	.firms-info{
+		margin-left: 15px;
+	}
+}
+
+@media all and (max-width: 700px){
+	.firms {
+		margin-top: 30px;
+		margin-bottom: 30px;
+	}
+
+	.firms-list{
+		max-width: 100px;
+	}
+
+	.image-container{
+		width: 80%;
+		max-width: 250px;
+		aspect-ratio: 3.5 / 1;
+	}
+
+	.firms-info{
+		margin-top: 0px;
+		padding-top: 10px;
+		margin-left: 5px;
+		grid-column: 1;
+		grid-row: 2;
+	}
+
+	.firms-info h2{
+		text-align: left;
+		font-size: 15px;
+	}
+
+	.firms-map{
+		grid-column: 1;
+		grid-row: 1;
+		width: 100%;
+	}
+
+	.container-grid{
+		display: flex;
+		flex-direction: column;
+	}
+}

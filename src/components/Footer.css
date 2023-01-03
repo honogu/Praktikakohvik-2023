@@ -1,0 +1,54 @@
+footer section{
+	padding: 25px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: row;
+}
+
+footer div{
+	margin: 10px;
+}
+
+footer #logo{
+	width: 250px;
+}
+
+#contact{
+	display: grid;
+}
+
+#location{
+	grid-row: 2;
+	grid-column: 1;
+}
+
+#meil{
+	grid-row: 1;
+	grid-column: 2;
+}
+
+#loc{
+	grid-row: 2;
+	grid-column: 2;
+}
+
+hr{
+	margin-top: 0;
+	height:2px;
+	width: 90%;
+	border-width:0;
+	background-color:white;
+}
+
+#footer{
+	padding-top: 25px;
+	padding-bottom: 25px;
+	text-align: center;
+}
+
+@media all and (max-width: 700px){
+    footer section{
+		flex-direction: column;
+	}
+}
