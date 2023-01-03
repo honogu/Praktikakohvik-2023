@@ -47,7 +47,7 @@ const Firms = () => {
 				
 				<section style={borderStyle} className="firms-info">
 					<div style={logosStyle} className='image-container'>
-						<img style={logosStyle} src={firmId === '' ? '' : 'https://localhost:7086/api/firms/' + firmId + '/image/1'} alt="firmsLogo"/>
+						<img style={logosStyle} src={firmId === '' ? '' : process.env.ApiUrl + 'firms/' + firmId + '/image/1'} alt="firmsLogo"/>
 					</div>
 					<h2 style={textStyle}>
 						{
@@ -79,7 +79,7 @@ function AddStylesToSelectedFirmButtons(button) {
 }
 
 const loadFirms = async (setFirms) => {
-	const response = await fetch('https://localhost:7086/api/firms');
+	const response = await fetch(process.env.ApiUrl + 'firms');
 	const data = await response.json();
 
 	if (data) {
@@ -92,7 +92,7 @@ const loadFirms = async (setFirms) => {
 }
 
 const getFirm = async (setText, id) => {
-	const response = await fetch('https://localhost:7086/api/firms/' + id);
+	const response = await fetch(process.env.ApiUrl + 'firms/' + id);
 	const data = await response.json();
 
 	if (data) {
