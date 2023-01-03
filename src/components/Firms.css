@@ -1,7 +1,6 @@
 .container-firms{
 	width: 100%;
-	margin-top: 60px;
-	margin-bottom: 60px;
+	margin: 60px 0;
 	overflow: hidden;
 }
 
@@ -60,6 +59,14 @@ ul h2, ul button, ul{
 	text-overflow: ellipsis; 
 }
 
+#f2 {
+	opacity: 0.5;
+}
+
+#f3 {
+	opacity: 0.25;
+}
+
 .image-container{
 	border-radius: 7px;
 	margin-left: auto;
@@ -103,7 +110,6 @@ ul h2, ul button, ul{
 }
 
 .firms-map img{
-	position: absolute;
 	width: 100%;
 	height: auto;
 }

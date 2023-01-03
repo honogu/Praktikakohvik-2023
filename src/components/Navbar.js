@@ -9,7 +9,7 @@ const Navbar = () => {
         <div className='container-nav'>
             <img src={require("../img/svg/" + value + "_lipp.svg")} alt="flag" onClick={ () => (value === 'en') ? setValue('et') : setValue('en') }></img>
             <nav>
-                <h1>PRAKTIKAKOHVIK 2022</h1>
+                <h1>PRAKTIKAKOHVIK 2023</h1>
                 <div className="container-countdown">
                     <div className="container-day">
                         <h3 className="dayNr">0</h3>

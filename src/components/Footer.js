@@ -24,7 +24,7 @@ const Footer = () => {
 				</div>
 			</section>
 			<hr/>  
-			<h2 id="footer">© 2022 ITÜK. All rights reserved.</h2>
+			<h2 id="footer">© 2023 ITÜK. All rights reserved.</h2>
 		</footer>
     )
 };
