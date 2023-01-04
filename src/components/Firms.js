@@ -7,10 +7,13 @@ const Firms = () => {
     const [ firms, setFirms ] = useState([]);
     const [ firmId, setId ] = useState('');
     const [ firmText, setText ] = useState([]);
+    const [ clicked, setClicked ] = useState(false);
+    const [ placeholder, setPlaceholder ] = useState(true);
+    const [ loading, setLoading ] = useState(true);
 
-    const [borderStyle, setBorderStyle] = useState({border: "2px", borderStyle: "dashed", borderColor: "white", marginTop: "25%"});
-    const [textStyle, setTextStyle] = useState({textAlign: "center", fontSize: "25px", paddingTop: "50px"});
-    const [logosStyle, setLogosStyle] = useState({height: "0px", visibility: "hidden"});
+    const [ borderStyle, setBorderStyle ] = useState({border: "2px", borderStyle: "dashed", borderColor: "white", marginTop: "25%"});
+    const [ textStyle, setTextStyle ] = useState({textAlign: "center", fontSize: "25px", paddingTop: "50px"});
+    const [ logosStyle, setLogosStyle ] = useState({height: "0px", visibility: "hidden", margin: "0"});
 
 	if (firms.length === 0)
 	{
@@ -19,9 +22,15 @@ const Firms = () => {
 
     function click(firm, button) {
 		setId(firm.id)
-		getFirm(setText, firm.id)
-		RemoveStyles(setBorderStyle, setTextStyle, setLogosStyle);
+		setPlaceholder(true)
+		getFirm(setText, setLoading, firm.id)
+		RemoveStyles();
 		AddStylesToSelectedFirmButtons(button);
+		if (!clicked)
+		{
+			setClicked(true)
+			RemoveStartingStyles(setBorderStyle, setTextStyle, setLogosStyle);
+		}
     }
 
     return (
@@ -47,13 +56,21 @@ const Firms = () => {
 				
 				<section style={borderStyle} className="firms-info">
 					<div style={logosStyle} className='image-container'>
-						<img style={logosStyle} src={firmId === '' ? '' : 'https://pkapi.onrender.com/api/firms/' + firmId + '/image/1'} alt="firmsLogo"/>
+						<img style={loading || placeholder ? { display: 'block' } : { display: 'none' } } src={require("../img/png/placeholder.png")} alt="firmsLogo"/>
+						<img
+							src={'https://pkapi.onrender.com/api/firms/' + firmId + '/image/1'}
+							style={ loading || placeholder ? { display: 'none' } : { display: 'block' } }
+							onLoad={() => setPlaceholder(false)}
+							alt="firmsLogo"
+						/>
 					</div>
 					<h2 style={textStyle}>
 						{
-							firms.length === 0
+							!clicked
 								? language.firmList.Undefined
-								: (value === 'et' ? firmText[0] : firmText[1]) ?? language.firmList.Guide 
+								: loading || placeholder
+									? '. . .'
+									: (value === 'et' ? firmText[0] : firmText[1]) ?? language.firmList.Guide 
 						}
 					</h2>
 				</section>
@@ -64,14 +81,17 @@ const Firms = () => {
 
 export default Firms;
 
-function RemoveStyles(setBorderStyle, setTextStyle, setLogosStyle) {
+function RemoveStyles() {
 	var arrayOfFirmNameButtons = document.getElementsByTagName("UL")[0];
 	for (let i = 0; i < arrayOfFirmNameButtons.getElementsByTagName("BUTTON").length; i++) {
 		arrayOfFirmNameButtons.getElementsByTagName("BUTTON")[i].style.cssText = '';
 	}
+}
+
+function RemoveStartingStyles(setBorderStyle, setTextStyle, setLogosStyle) {
 	setBorderStyle({border: '', borderStyle: '', borderColor: '', marginTop: ''});
 	setTextStyle({textAlign: '', fontSize: '', paddingTop: ''});
-	setLogosStyle({width: ''});
+	setLogosStyle({height: '', visibility: '', margin: ''});
 }
 
 function AddStylesToSelectedFirmButtons(button) {
@@ -91,11 +111,13 @@ const loadFirms = async (setFirms) => {
 	}
 }
 
-const getFirm = async (setText, id) => {
+const getFirm = async (setText, setLoading, id) => {
+	setLoading(true)
 	const response = await fetch('https://pkapi.onrender.com/api/firms/' + id);
 	const data = await response.json();
 
 	if (data) {
 		setText([data.estonianDescription, data.englishDescription])
+		setLoading(false)
 	}
 }

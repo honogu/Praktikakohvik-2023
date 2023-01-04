@@ -14,6 +14,7 @@ svg {
 .container-text {
 	background-color: rgba(48, 46, 189, 0.71);
 	padding: 40px;
+    border-radius: 10px 0 0 10px;
 }
 
 @media all and (max-width: 983px){
@@ -24,6 +25,10 @@ svg {
 	.container-text {
 		padding-left: 0;
 		padding-right: 0;
+	}
+
+	.container-text {
+		border-radius: 0;
 	}
 }
 

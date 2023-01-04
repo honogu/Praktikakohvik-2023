@@ -4,6 +4,7 @@ import Navbar from "./Navbar";
 import Firms from './Firms';
 import About from './About';
 import Questions from './Questions';
+import Gallery from './Gallery';
 import Footer from './Footer';
 
 function Layout() {
@@ -23,6 +24,7 @@ function Layout() {
                 <div className='container-text'>
                     <Questions/>
                 </div>
+                <Gallery/>
                 <Footer/>
             </div>
         </>

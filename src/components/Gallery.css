@@ -1,0 +1,27 @@
+.container-gallery {
+    margin-top: 40px;
+    height: auto;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(400px, min-content));
+    gap: 20px;
+}
+
+.container-gallery .image {
+    position: relative;
+    width: 400px;
+    height: 279px;
+    overflow: hidden;
+    object-fit: cover;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.container-gallery img {
+    position: absolute;
+    height: 279px;
+    border-radius: 10px;
+    transition: opacity 0.5s;
+}

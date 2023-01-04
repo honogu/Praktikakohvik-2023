@@ -1,4 +1,4 @@
-#praktikakohvik_logo{
+#praktikakohvik_logo {
 	width: 40%;
 	max-width: 700px;
 	height: auto;
@@ -8,19 +8,19 @@
 	position: absolute;
 }
 
-header h3:not(.countdown h3){
+header h3:not(.countdown h3) {
 	font-size: 23px;
 	font-weight: 100;
 	margin-bottom: 20px;
 }
 
-.countdown{
+.countdown {
 	display: flex;
 	text-align: center;
 	margin-bottom: 100px;
 }
 
-.countdown div{
+.countdown div {
 	border: solid;
 	border-width: 2px;
 	border-color: white;
@@ -30,16 +30,16 @@ header h3:not(.countdown h3){
 	height: 100px;
 }
 
-.countdown h2, .countdown h3{
+.countdown h2, .countdown h3 {
 	padding: 0;
 }
 
-.countdown h3{
+.countdown h3 {
 	padding-top: 15px;
 	font-size: 35px;
 }
 
-.countdown .dayNr{
+.countdown .dayNr {
 	color: #FF0063;
 }
 
