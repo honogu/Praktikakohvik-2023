@@ -1,7 +1,7 @@
 nav{
 	height: 60px;
 	width: 100%;
-    top: -90px;
+    top: -60px;
 	padding: 0 50px 0 50px;
 	box-sizing: border-box;
 	background-color: #FF0063;
@@ -67,7 +67,7 @@ nav .container-countdown div{
 	}
 }
 
-@media all and (max-width: 700px){
+@media all and (max-width: 750px){
 	nav {
 		height: 65px;
 		flex-direction: column;
