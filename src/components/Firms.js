@@ -66,11 +66,13 @@ const Firms = () => {
 					</div>
 					<h2 style={textStyle}>
 						{
-							!clicked
-								? language.firmList.Undefined
-								: loading || placeholder
-									? '. . .'
-									: (value === 'et' ? firmText[0] : firmText[1]) ?? language.firmList.Guide 
+							firms.length === 0
+							? 	language.firmList.Undefined
+							:	!clicked
+									? language.firmList.Guide
+									: loading || placeholder
+										? '. . .'
+										: (value === 'et' ? firmText[0] : firmText[1]) ?? language.firmList.Guide 
 						}
 					</h2>
 				</section>
