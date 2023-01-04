@@ -25,3 +25,14 @@
     border-radius: 10px;
     transition: opacity 0.5s;
 }
+
+@media all and (max-width: 700px) {
+	.container-gallery {
+        grid-template-columns: repeat(auto-fit, minmax(300px, min-content));
+    }
+    
+    .container-gallery .image {
+        width: 300px;
+        height: 200px;
+    }
+}

@@ -38,7 +38,7 @@ export default Navbar;
 window.addEventListener('scroll', () => {
     const scrolled = window.scrollY;
     if (Math.ceil(scrolled) < 350) {
-        document.querySelector('nav').style.top = '-60px';
+        document.querySelector('nav').style.top = '-65px';
     } else {
         document.querySelector('nav').style.top = '0px';
     }
