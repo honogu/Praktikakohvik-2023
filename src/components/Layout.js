@@ -18,11 +18,17 @@ function Layout() {
             <div className="container-main">
                 <Header/>
                 <div className='container-text'>
-                    <About/>
+                    <div className='container'>
+                        <About/>
+                    </div>
+                    <div className='text-bg'></div>
                 </div>
                 <Firms/>
                 <div className='container-text'>
-                    <Questions/>
+                    <div className='container'>
+                        <Questions/>
+                    </div>
+                    <div className='text-bg'></div>
                 </div>
                 <Gallery/>
                 <Footer/>

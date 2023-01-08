@@ -8,13 +8,28 @@ svg {
 	padding-top: 50px;
 	width: 90%;
   	margin: 0 auto;
-	max-width: 1920px;
+	max-width: 1400px;
 }
 
 .container-text {
-	background-color: rgba(48, 46, 189, 0.71);
+	position: relative;
 	padding: 40px;
+}
+
+.container {
+	position: relative;
+	z-index: 2;
+	padding: 0 20px;
+}
+
+.text-bg {
+	position: absolute;
+	background-color: rgba(48, 46, 189, 0.71);
     border-radius: 10px 0 0 10px;
+	top: 0;
+	width: 500%;
+	height: 100%;
+	z-index: 1;
 }
 
 @media all and (max-width: 983px){
@@ -27,7 +42,7 @@ svg {
 		padding-right: 0;
 	}
 
-	.container-text {
+	.text-bg {
 		border-radius: 0;
 	}
 }

@@ -1,10 +1,9 @@
 .container-gallery {
     margin-top: 40px;
     height: auto;
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
-    grid-template-columns: repeat(auto-fit, minmax(400px, min-content));
     gap: 20px;
 }
 
@@ -27,11 +26,7 @@
 }
 
 @media all and (max-width: 700px) {
-	.container-gallery {
-        grid-template-columns: repeat(auto-fit, minmax(300px, min-content));
-    }
-    
-    .container-gallery .image {
+	.container-gallery .image {
         width: 300px;
         height: 200px;
     }

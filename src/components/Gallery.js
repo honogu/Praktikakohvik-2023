@@ -11,8 +11,11 @@ const Gallery = () => {
     const [ firstSetOfImages, imageSet ] = useState(false);
 
     useEffect(() => {
-        setInterval(function() { imageSet(!firstSetOfImages) }, 12000);
-    }, [firstSetOfImages]);
+        const interval = setInterval(() => {
+            imageSet(imageSet => !imageSet);
+        }, 16000);
+        return () => clearInterval(interval);
+    }, []);
 
     return (
         <div className='container-gallery'>
