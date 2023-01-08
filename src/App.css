@@ -8,15 +8,18 @@
 	font-family: GilroyEB;
 }
 
-body{
-	width: 100vw;
+html, body {
+	width: 100%;
 	height: 100%;
-	margin:0;
-	padding:0;
+	margin: 0;
+	padding: 0;
+	overflow-x: hidden;
+}
+
+body{
 	background: rgb(15,13,27);
 	background: linear-gradient(90deg, #170954 9%, #312ebd 95%);
 	font-family: GilroyL;
-	overflow-x: hidden;
 }
 
 h1, h2, h3, h4{

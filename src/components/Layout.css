@@ -7,7 +7,8 @@ svg {
 	height: 100%;
 	padding-top: 50px;
 	width: 90%;
-  	margin: 0 auto;
+  	margin-left: auto;
+	margin-right: auto;
 	max-width: 1400px;
 }
 
@@ -27,8 +28,9 @@ svg {
 	background-color: rgba(48, 46, 189, 0.71);
     border-radius: 10px 0 0 10px;
 	top: 0;
-	width: 500%;
 	height: 100%;
+	width: 100%;
+	padding-right: 500%;
 	z-index: 1;
 	overflow-x: hidden;
 }
