@@ -30,6 +30,7 @@ svg {
 	width: 500%;
 	height: 100%;
 	z-index: 1;
+	overflow-x: hidden;
 }
 
 @media all and (max-width: 983px){
