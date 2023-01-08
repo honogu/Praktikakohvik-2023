@@ -58,4 +58,8 @@ svg {
 	.container-main{
 		margin: 0;
 	}
+
+	.container {
+		padding: 0;
+	}
 }

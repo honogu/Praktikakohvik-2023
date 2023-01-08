@@ -37,5 +37,6 @@
 
 	.container-questions .text {
 		width: auto;
+        margin-right: 0;
 	}
 }
