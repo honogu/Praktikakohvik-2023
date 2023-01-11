@@ -1,5 +1,5 @@
 import './Firms.css';
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { srcContext } from "../SrcContext.js";
 
 const Firms = () => {
@@ -15,10 +15,9 @@ const Firms = () => {
     const [ textStyle, setTextStyle ] = useState({textAlign: "center", fontSize: "25px", paddingTop: "50px"});
     const [ logosStyle, setLogosStyle ] = useState({height: "0px", visibility: "hidden", margin: "0"});
 
-	if (firms.length === 0)
-	{
+    useEffect(() => {
 		loadFirms(setFirms)
-	}
+    }, []);
 
     function click(firm, button) {
 		setId(firm.id)
@@ -35,21 +34,21 @@ const Firms = () => {
 
     return (
         <div className="container-firms">
-			<section className="firms-list">
-				<h3>{language.firms.firmsTitle}</h3>
-				<ul>
-					{
-						firms.map((firm) => (
-							<li key={firm.name}><button onClick={(e) => click(firm, e)}><h2>{firm.name}</h2></button></li>
-						))
-					}
-					<li><button><h2>...</h2></button></li>
-					<li id='f2'><button><h2>...</h2></button></li>
-					<li id='f3'><button><h2>...</h2></button></li>
-				</ul>
-			</section>
-
 			<div className="container-grid">
+				<h2 id='firms-title'>{language.firms.firmsTitle}</h2>
+				<section className="firms-list">
+					<ul>
+						{
+							firms.map((firm) => (
+								<li key={firm.name}><button onClick={(e) => click(firm, e)}><h3>{firm.name}</h3></button></li>
+							))
+						}
+						<li><button><h3>...</h3></button></li>
+						<li id='f2'><button><h3>...</h3></button></li>
+						<li id='f3'><button><h3>...</h3></button></li>
+					</ul>
+				</section>
+
 				<section className="firms-map">
 					<img src={require("../img/png/" + language.firms.map + ".png")} alt="Aula"/>
 				</section>
@@ -64,7 +63,7 @@ const Firms = () => {
 							alt="firmsLogo"
 						/>
 					</div>
-					<h2 style={textStyle}>
+					<h3 style={textStyle}>
 						{
 							firms.length === 0
 							? 	language.firmList.Undefined
@@ -74,7 +73,7 @@ const Firms = () => {
 										? '. . .'
 										: (value === 'et' ? firmText[0] : firmText[1]) ?? language.firmList.Guide 
 						}
-					</h2>
+					</h3>
 				</section>
 			</div>
         </div>

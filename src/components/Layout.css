@@ -1,62 +1,51 @@
 svg {
 	position: absolute;
-	z-index: -1;
+	z-index: 5;
 }
 
 .container-main{
 	height: 100%;
-	padding-top: 50px;
-	width: 90%;
+	width: 80%;
+	max-width: 1300px;
   	margin-left: auto;
 	margin-right: auto;
-	max-width: 1400px;
 }
 
 .container-text {
 	position: relative;
 	padding: 40px;
+	min-height: 200px;
+	display: flex;
+	justify-content: center;
 }
 
 .container {
 	position: relative;
 	z-index: 2;
 	padding: 0 20px;
+	display: flex;
+	align-items: center;
 }
 
 .text-bg {
 	position: absolute;
-	background-color: rgba(48, 46, 189, 0.71);
-    border-radius: 10px 0 0 10px;
+	background-color: #2a28a3;
 	top: 0;
 	height: 100%;
-	width: 100%;
-	padding-right: 500%;
+	width: 100vw;
 	z-index: 1;
 	overflow-x: hidden;
 }
 
-@media all and (max-width: 983px){
+@media all and (max-width: 900px){
 	.container-main{
-		width: 100%;
+		width: auto;
+		margin: 0;
+		padding: 0 10px;
 	}
 
 	.container-text {
-		padding-left: 0;
-		padding-right: 0;
-	}
-
-	.text-bg {
-		border-radius: 0;
-	}
-}
-
-@media all and (max-width: 700px){
-	.container-main h1:not(.countdown h1), .container-main h2:not(.countdown h2, .firms-info h2), .container-main h3:not(.countdown h3){
-		font-size: 80%;
-	}
-
-	.container-main{
-		margin: 0;
+		padding: 30px 0;
 	}
 
 	.container {

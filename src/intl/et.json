@@ -15,7 +15,7 @@
             "aboutContent": "Praktikakohvik on TalTechi tudengitele suunatud infopäev, kus kohtuvad parimate kohalike ja rahvusvaheliste ettevõtete esindajad ja tulevased praktikandid. Huvilistel on võimalus küsida spetsialistidelt nende tööd puudutavaid küsimusi ning lähemalt tutvuda oma potentsiaalsete tööandjatega.\\n\\nPS! Praktikakohvik on eelkõige suunatud IT-tudengitele, kuid ka teiste teaduskondade üliõpilased võivad leida enda jaoks midagi huvitavat. Üritust korraldab IT-teaduskonna üliõpilaskogu koostöös IT-teaduskonnaga.\\n\\n"
         },
         "firms":{
-            "firmsTitle": "OSALEVAD FIRMAD:",
+            "firmsTitle": "OSALEVAD FIRMAD",
             "map": "aula",
             "new": "Uus!"
         },
@@ -69,7 +69,7 @@
             "aboutContent": "Internship Café is an information day for TalTech students, where the best local and international companies' representatives and future interns meet. Those interested will have the opportunity to ask specialists about their job and get to know their potential employers.\\n\\nPS! Internship Café is primarily aimed at IT students, but students from other faculties can also find something of interest. The event is organized by The Student Council of the School of IT together with the IT faculty."
         },
         "firms":{
-            "firmsTitle": "PARTICIPATING COMPANIES:",
+            "firmsTitle": "PARTICIPATING COMPANIES",
             "map": "hall",
             "new": "New!"
         },

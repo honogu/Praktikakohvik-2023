@@ -9,8 +9,8 @@ const Questions = () => {
     return (
         <div className='container-questions'>
             <div className='container-questions text'>
-                <h3>{language.questions.questionTitle}</h3>
-                <h2>{language.questions.questionContent.replaceAll('\\n', '\n')}</h2>
+                <h2>{language.questions.questionTitle}</h2>
+                <h3>{language.questions.questionContent.replaceAll('\\n', '\n')}</h3>
             </div>
             <div className='container-questions image'>
                 <img src={praktikakohvik2022} alt="Praktikakohvik 2022"/>

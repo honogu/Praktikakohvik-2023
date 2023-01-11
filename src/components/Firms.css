@@ -23,18 +23,18 @@
 	width: 100%;
 }
 
-.firms-list h2{
+.firms-list h3{
 	text-align: left;
 	font-weight: 200;
 	border-bottom: 1px solid #FF0063;
 }
 
-.firms-list h3{
+.firms-list h2{
 	padding-left: 10px;
 	padding-right: 0;
 }
 
-ul h2, ul button, ul{
+ul h3, ul button, ul{
 	list-style-type: none;
 	font-weight: bold;
 	padding: 0;
@@ -49,11 +49,10 @@ ul h2, ul button, ul{
 	height: min-content;
 }
 
-.firms-info h2{
+.firms-info h3{
 	padding-left: 2px;
 	padding-right: 2px;
 	text-align: left;
-	font-size: 19px;
 	padding-bottom: 50px;
 	white-space: pre-wrap;
 	word-wrap:break-word;
@@ -136,8 +135,26 @@ ul h2, ul button, ul{
 
 .container-grid {
 	display: grid;
-	grid-template-columns: 50% auto;
+	grid-template-columns: 200px 50% auto;
+	grid-template-rows: 70px auto;
 	line-height: 1.1;
+}
+
+#firms-title {
+	grid-column: 1;
+	grid-row: 1;
+}
+.firms-list {
+	grid-column: 1;
+	grid-row: 2;
+}
+.firms-info {
+	grid-column: 2;
+	grid-row: 1 / span 2;
+}
+.firms-map {
+	grid-column: 3;
+	grid-row: 1 / span 2;
 }
 
 .container-map li {
@@ -169,7 +186,7 @@ ul h2, ul button, ul{
 	transition: 0.2s;
 }
 
-.container-map h2:not(#sideways) {
+.container-map h3:not(#sideways) {
 	text-align: center;
 	color: white;
 }
@@ -181,6 +198,27 @@ ul h2, ul button, ul{
 
 	.firms-info {
 		margin-left: 15px;
+	}
+
+	.container-grid {
+		grid-template-columns: 150px 50% auto;
+		grid-template-rows: auto auto;
+	}
+	#firms-title {
+		grid-column: 1 / span 3;
+		grid-row: 1;
+	}
+	.firms-list {
+		grid-column: 1;
+		grid-row: 2;
+	}
+	.firms-info {
+		grid-column: 2;
+		grid-row: 2;
+	}
+	.firms-map {
+		grid-column: 3;
+		grid-row: 2;
 	}
 }
 
@@ -204,8 +242,6 @@ ul h2, ul button, ul{
 		margin-top: 0px;
 		padding-top: 10px;
 		margin-left: 5px;
-		grid-column: 1;
-		grid-row: 2;
 	}
 
 	.firms-info h2 {
@@ -213,14 +249,23 @@ ul h2, ul button, ul{
 		font-size: 15px;
 	}
 
-	.firms-map {
-		grid-column: 1;
-		grid-row: 1;
-		width: 100%;
-	}
-
 	.container-grid {
-		display: flex;
-		flex-direction: column;
+		grid-template-columns: 100px auto;
+	}
+	#firms-title {
+		grid-column: 1 / span 2;
+		grid-row: 1;
+	}
+	.firms-list {
+		grid-column: 1;
+		grid-row: 2 / span 2;
+	}
+	.firms-info {
+		grid-column: 2;
+		grid-row: 3;
+	}
+	.firms-map {
+		grid-column: 2;
+		grid-row: 2;
 	}
 }

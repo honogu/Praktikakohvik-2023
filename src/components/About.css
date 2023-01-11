@@ -1,6 +1,7 @@
-.container-about{
-    column-count: 2;
-	column-gap: 40px;
+.container-about {
+	text-align: left;
+    columns: 2 200px;
+	column-gap: 100px;
 	white-space: pre-wrap;
 }
 

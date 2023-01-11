@@ -1,6 +1,6 @@
 import './Gallery.css';
 import { useEffect, useState } from "react";
-import praktikakohvik2022_1 from '../img/png/PK2022_2.JPG';
+import praktikakohvik2022_1 from '../img/png/PK2022_2.jpg';
 import praktikakohvik2022_2 from '../img/png/PK2022_3.jpg';
 import praktikakohvik2022_3 from '../img/png/PK2022_4.jpg';
 import praktikakohvik2022_4 from '../img/png/PK2022_5.jpg';

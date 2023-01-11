@@ -14,8 +14,8 @@ const Footer = () => {
 				<div id="contact">
 					<img src={envelopeLogo} alt="envelope" id="envelope"/>
 					<img src={locationLogo} alt="location" id="location"/>
-					<h2 id="meil">kontakt@ituk.ee</h2>
-					<h2 id="loc">Akadeemia tee 15a,<br/>ICT-361</h2>
+					<h3 id="meil">kontakt@ituk.ee</h3>
+					<h3 id="loc">Akadeemia tee 15a,<br/>ICT-361</h3>
 				</div>
 				<div id="links">
 					<a href="https://www.facebook.com/ituk.taltech/" rel="noreferrer" target="_blank"><img src={facebookLogo} alt="ITÜK Facebook"/></a>
@@ -24,7 +24,7 @@ const Footer = () => {
 				</div>
 			</section>
 			<hr/>  
-			<h2 id="footer">© 2023 ITÜK. All rights reserved.</h2>
+			<h3 id="footer">© 2023 ITÜK. All rights reserved.</h3>
 		</footer>
     )
 };
