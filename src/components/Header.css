@@ -8,12 +8,11 @@
     overflow: hidden;
     object-fit: cover;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
 	justify-content: center;
 }
 .header-bg img {
     position: absolute;
-	height: 100%;
     min-width: 100%;
     min-height: 100%;
 }
@@ -113,6 +112,10 @@ header {
 
 	header, .header-bg {
 		height: 300px;
+	}
+
+	.header-bg img {
+		height: 100%;
 	}
 
 	.countdown div{
