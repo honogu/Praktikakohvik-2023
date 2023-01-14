@@ -48,6 +48,6 @@ export const animateCountdown = () => {
     animateValue('.dayNr', dayRange, animationDuration);
     animateValue('.hourNr', hourRange, animationDuration);
     animateValue('.minuteNr', minuteRange, animationDuration);
-    animateValue('.secondNr', secondRange, animationDuration);
+    animateValue('.secondNr', secondRange - animationDuration / 1000, animationDuration);
     setTimeout(myInterval, animationDuration);
 }

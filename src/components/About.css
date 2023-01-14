@@ -1,7 +1,10 @@
 .container-about {
-	text-align: left;
-    columns: 2 200px;
-	column-gap: 100px;
+	display: flex;
+	flex-direction: column;
+}
+
+.container-about h3 {
+	column-count: 2;
 	white-space: pre-wrap;
 }
 

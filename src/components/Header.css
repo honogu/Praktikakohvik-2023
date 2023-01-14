@@ -78,19 +78,19 @@ header {
 }
 
 .countdown .hourNr{
-	color: #FF2A7C;
+	color: #fc3b85;
 }
 
 .countdown .container-hour {
-	border-bottom-color: #FF2A7C;
+	border-bottom-color: #fc3b85;
 }
 
 .countdown .minuteNr{
-	color: #FF83B3;
+	color: #ff97bf;
 }
 
 .countdown .container-minute {
-	border-bottom-color: #FF83B3;
+	border-bottom-color: #ff97bf;
 }
 
 @media all and (max-width: 700px){

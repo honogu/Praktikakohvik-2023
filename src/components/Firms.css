@@ -5,7 +5,7 @@
 	padding: 0 50px;
 }
 
-.firms-list{
+.firms-list {
 	float: left;
 	max-width: 222px;
 	margin: 0;
@@ -21,6 +21,7 @@
 	background-color: transparent;
 	border: none;
 	width: 100%;
+	padding: 1px 2px;
 }
 
 .firms-list h3{
@@ -34,11 +35,10 @@
 	padding-right: 0;
 }
 
-ul h3, ul button, ul{
+.firms-list ul {
 	list-style-type: none;
 	font-weight: bold;
 	padding: 0;
-	padding-left: 4px;
 }
 
 .firms-info{
@@ -135,7 +135,7 @@ ul h3, ul button, ul{
 
 .container-grid {
 	display: grid;
-	grid-template-columns: 200px 50% auto;
+	grid-template-columns: 200px 45% auto;
 	grid-template-rows: 70px auto;
 	line-height: 1.1;
 }
