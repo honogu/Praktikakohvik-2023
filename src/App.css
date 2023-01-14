@@ -23,7 +23,7 @@ body {
 	background: #1b0b64;
 }
 
-h1, h2, h3, p {
+h1, h2, h3, p, li {
 	margin: 0;
 	color: white;
 }
@@ -40,7 +40,7 @@ h2 {
 	font: normal 35px GilroyEB;
 }
 
-h3, p {
+h3, p, li {
 	font: normal 18px/1.5em GilroyL;
 }
 
@@ -53,7 +53,7 @@ h3, p {
 		font-size: 30px;
 	}
 
-	h3, p {
+	h3, p, li {
 		font-size: 14px;
 	}
 }

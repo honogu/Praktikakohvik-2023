@@ -69,6 +69,10 @@ nav .container-countdown h1 {
 		font-size: 20px;
 	}
 
+	.container-nav img{
+		top: 17px;
+	}
+
 	nav .container-countdown div {
 		width: 50px;
 	}

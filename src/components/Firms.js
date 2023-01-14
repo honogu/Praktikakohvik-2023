@@ -10,7 +10,7 @@ const Firms = () => {
     const [ placeholder, setPlaceholder ] = useState(true);
 
     const [ borderStyle, setBorderStyle ] = useState({border: "2px", borderStyle: "dashed", borderColor: "white", marginTop: "25%"});
-    const [ textStyle, setTextStyle ] = useState({textAlign: "center", fontSize: "25px", paddingTop: "50px"});
+    const [ textStyle, setTextStyle ] = useState({textAlign: "center", fontSize: "20px", paddingTop: "50px"});
     const [ logosStyle, setLogosStyle ] = useState({height: "0px", visibility: "hidden", margin: "0"});
 
     useEffect(() => {

@@ -11,6 +11,13 @@ const Questions = () => {
             <div className='container-questions text'>
                 <h2>{language.questions.questionTitle}</h2>
                 <p>{language.questions.questionContent.replaceAll('\\n', '\n')}</p>
+                <ul>
+                    {
+                        language.questions.questions.map((q) => (
+                            <li key={q}>{q}</li>
+                        ))
+                    }
+                </ul>
             </div>
             <div className='container-questions image'>
                 <img src={praktikakohvik2022} alt="Praktikakohvik 2022"/>

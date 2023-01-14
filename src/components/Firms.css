@@ -26,6 +26,7 @@
 
 .firms-list h3 {
 	text-align: left;
+	font-size: 17px;
 	font-weight: 200;
 	border-bottom: 1px solid #FF0063;
 }
@@ -230,6 +231,10 @@
 
 	.firms-list {
 		max-width: 100px;
+	}
+
+	.firms-list h3 {
+		font-size: 12px;
 	}
 
 	.image-container {

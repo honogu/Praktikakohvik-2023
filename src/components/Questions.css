@@ -18,6 +18,11 @@
     border-radius: 10px;
 }
 
+.container-questions ul {
+	margin: 0;
+    padding-left: 25px;
+}
+
 .container-questions .text {
     width: 670px;
     margin-right: 50px;
