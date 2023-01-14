@@ -8,7 +8,7 @@ const About = () => {
     return (
         <div className='container-about'>
             <h2>{language.about.aboutTitle}</h2>
-			<h3>{language.about.aboutContent.replaceAll('\\n', '\n')}</h3>
+			<p>{language.about.aboutContent.replaceAll('\\n', '\n')}</p>
         </div>
     )
 };

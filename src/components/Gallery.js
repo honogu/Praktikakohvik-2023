@@ -13,7 +13,7 @@ const Gallery = () => {
     useEffect(() => {
         const interval = setInterval(() => {
             imageSet(imageSet => !imageSet);
-        }, 16000);
+        }, 13000);
         return () => clearInterval(interval);
     }, []);
 

@@ -61,7 +61,7 @@ const Firms = () => {
 							alt="firmsLogo"
 						/>
 					</div>
-					<h3 style={textStyle}>
+					<p style={textStyle}>
 						{
 							firms.length === 0
 							? 	language.firmList.Undefined
@@ -71,7 +71,7 @@ const Firms = () => {
 										? '. . .'
 										: (value === 'et' ? selectedFirm.estonianDescription : selectedFirm.englishDescription) ?? language.firmList.Guide 
 						}
-					</h3>
+					</p>
 				</section>
 			</div>
         </div>
