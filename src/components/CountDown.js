@@ -6,7 +6,7 @@ const hour = minute * 60;
 const day = hour * 24;
 
 const animateValue = (className, end, duration) => {
-    if (end > 100) return;
+    if (end >= 100 || end <= 0) return;
     var current = 0;
     var obj = document.querySelectorAll(className);
     var stepTime = Math.abs(Math.floor(duration / end));
