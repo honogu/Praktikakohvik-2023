@@ -18,11 +18,14 @@ const Firms = () => {
     }, []);
 
     function click(firm, button) {
-		let filteredFirm = firms.filter(function(x) { return x.id === firm.id; });
-		setSelectedFirm(...filteredFirm)
-		setPlaceholder(true)
-		RemoveStyles();
-		AddStylesToSelectedFirmButtons(button);
+		if (firm.id !== selectedFirm.id)
+		{
+			let filteredFirm = firms.filter(function(x) { return x.id === firm.id; });
+			setSelectedFirm(...filteredFirm)
+			setPlaceholder(true)
+			RemoveStyles();
+			AddStylesToSelectedFirmButtons(button);
+		}
 		if (!clicked)
 		{
 			setClicked(true)
