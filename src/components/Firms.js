@@ -6,15 +6,15 @@ const Firms = () => {
     const { value, language } = useContext(srcContext);
     const [ firms, setFirms ] = useState([]);
     const [ selectedFirm, setSelectedFirm ] = useState([]);
+    const [ loading, setLoading ] = useState(true);
     const [ clicked, setClicked ] = useState(false);
-    const [ placeholder, setPlaceholder ] = useState(true);
 
     const [ borderStyle, setBorderStyle ] = useState({border: "2px", borderStyle: "dashed", borderColor: "white", marginTop: "25%"});
     const [ textStyle, setTextStyle ] = useState({textAlign: "center", fontSize: "20px", paddingTop: "50px"});
     const [ logosStyle, setLogosStyle ] = useState({height: "0px", visibility: "hidden", margin: "0"});
 
     useEffect(() => {
-		loadFirms(setFirms)
+		loadFirms(setFirms, setLoading)
     }, []);
 
     function click(firm, button) {
@@ -22,7 +22,7 @@ const Firms = () => {
 		{
 			let filteredFirm = firms.filter(function(x) { return x.id === firm.id; });
 			setSelectedFirm(...filteredFirm)
-			setPlaceholder(true)
+			setLoading(true)
 			RemoveStyles();
 			AddStylesToSelectedFirmButtons(button);
 		}
@@ -56,23 +56,23 @@ const Firms = () => {
 				
 				<section style={borderStyle} className="firms-info">
 					<div style={logosStyle} className='image-container'>
-						<img style={ placeholder ? { display: 'block' } : { display: 'none' } } src={require("../img/png/placeholder.png")} alt="firmsLogo"/>
+						<img style={ loading ? { display: 'block' } : { display: 'none' } } src={require("../img/png/placeholder.png")} alt="firmsLogo"/>
 						<img
 							src={'https://pkapi.onrender.com/api/firms/' + selectedFirm.id + '/image/1'}
-							style={ placeholder ? { display: 'none' } : { display: 'block' } }
-							onLoad={() => setPlaceholder(false)}
+							style={ loading ? { display: 'none' } : { display: 'block' } }
+							onLoad={() => setLoading(false)}
 							alt="firmsLogo"
 						/>
 					</div>
 					<p style={textStyle}>
 						{
-							firms.length === 0
-							? 	language.firmList.Undefined
-							:	!clicked
+							loading
+							?	language.firmList.Loading
+							:	firms.length === 0
+								? 	language.firmList.Undefined
+								:	!clicked
 									? language.firmList.Guide
-									: placeholder
-										? '. . .'
-										: (value === 'et' ? selectedFirm.estonianDescription : selectedFirm.englishDescription) ?? language.firmList.Guide 
+									: (value === 'et' ? selectedFirm.estonianDescription : selectedFirm.englishDescription) ?? language.firmList.Guide 
 						}
 					</p>
 				</section>
@@ -100,7 +100,7 @@ function AddStylesToSelectedFirmButtons(button) {
 	button.currentTarget.style.backgroundColor = '#FF0063';
 }
 
-const loadFirms = async (setFirms) => {
+const loadFirms = async (setFirms, setLoading) => {
 	const response = await fetch('https://pkapi.onrender.com/api/firms');
 	const data = await response.json();
 
@@ -108,6 +108,7 @@ const loadFirms = async (setFirms) => {
 		var promises = data.map(f => getFirm(f.id))
 		var result = await Promise.all(promises)
 		setFirms(result)
+		setLoading(false)
 	}
 }
 
