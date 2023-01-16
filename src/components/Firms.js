@@ -8,6 +8,7 @@ const Firms = () => {
     const [ selectedFirm, setSelectedFirm ] = useState([]);
     const [ loading, setLoading ] = useState(true);
     const [ clicked, setClicked ] = useState(false);
+    const [ loadingText, setLoadingText ] = useState('');
 
     const [ borderStyle, setBorderStyle ] = useState({border: "2px", borderStyle: "dashed", borderColor: "white", marginTop: "25%"});
     const [ textStyle, setTextStyle ] = useState({textAlign: "center", fontSize: "20px", paddingTop: "50px"});
@@ -17,12 +18,23 @@ const Firms = () => {
 		loadFirms(setFirms, setLoading)
     }, []);
 
+    useEffect(() => {
+		const interval = setInterval(function() {
+			if (loading)
+			{
+				setLoadingText(setLoadingText => setLoadingText === ' . . .' ? '' : setLoadingText += ' .')
+			}
+			else setLoadingText(setLoadingText => setLoadingText = '')
+		}, 450);
+		return () => clearInterval(interval)
+    }, [loading]);
+
     function click(firm, button) {
 		if (firm.id !== selectedFirm.id)
 		{
 			let filteredFirm = firms.filter(function(x) { return x.id === firm.id; });
-			setSelectedFirm(...filteredFirm)
 			setLoading(true)
+			setSelectedFirm(...filteredFirm)
 			RemoveStyles();
 			AddStylesToSelectedFirmButtons(button);
 		}
@@ -67,7 +79,7 @@ const Firms = () => {
 					<p style={textStyle}>
 						{
 							loading
-							?	language.firmList.Loading
+							?	language.firmList.Loading + loadingText
 							:	firms.length === 0
 								? 	language.firmList.Undefined
 								:	!clicked

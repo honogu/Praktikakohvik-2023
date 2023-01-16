@@ -36,7 +36,7 @@
             "title": "Mine vaata ka Facebooki üritust:"
         },
         "firmList": {
-            "Loading": "Laeb . . .",
+            "Loading": "Laeb",
             "Guide": "Vajuta firma nimele, et näha infot.",
             "Undefined": "Kuulutame peagi välja ettevõtted..."
         }
@@ -78,7 +78,7 @@
             "title": "Go see the Facebook event:"
         },
         "firmList": {
-            "Loading": "Loading . . .",
+            "Loading": "Loading",
             "Guide": "Press on a firms name to view info.",
             "Undefined": "Announcing the firms soon..."
         }
