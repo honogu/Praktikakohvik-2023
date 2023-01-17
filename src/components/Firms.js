@@ -1,49 +1,36 @@
 import './Firms.css';
 import { useContext, useState, useEffect } from "react";
 import { srcContext } from "../SrcContext.js";
+import FirmsInfo from './FirmsInfo';
+import FirmsInfoPlaceholder from './FirmsInfoPlaceholder';
 
 const Firms = () => {
-    const { value, language } = useContext(srcContext);
+    const { language } = useContext(srcContext);
     const [ firms, setFirms ] = useState([]);
     const [ selectedFirm, setSelectedFirm ] = useState([]);
     const [ loading, setLoading ] = useState(true);
     const [ clicked, setClicked ] = useState(false);
-    const [ loadingText, setLoadingText ] = useState('');
-
-    const [ borderStyle, setBorderStyle ] = useState({border: "2px", borderStyle: "dashed", borderColor: "white", marginTop: "25%"});
-    const [ textStyle, setTextStyle ] = useState({textAlign: "center", fontSize: "20px", paddingTop: "50px"});
-    const [ logosStyle, setLogosStyle ] = useState({height: "0px", visibility: "hidden", margin: "0"});
 
     useEffect(() => {
 		loadFirms(setFirms, setLoading)
     }, []);
 
-    useEffect(() => {
-		const interval = setInterval(function() {
-			if (loading)
-			{
-				setLoadingText(setLoadingText => setLoadingText === ' . . .' ? '' : setLoadingText += ' .')
-			}
-			else setLoadingText(setLoadingText => setLoadingText = '')
-		}, 450);
-		return () => clearInterval(interval)
-    }, [loading]);
-
-    function click(firm, button) {
+    function click(firm) {
+		setClicked(true)
 		if (firm.id !== selectedFirm.id)
 		{
 			let filteredFirm = firms.filter(function(x) { return x.id === firm.id; });
 			setLoading(true)
 			setSelectedFirm(...filteredFirm)
-			RemoveStyles();
-			AddStylesToSelectedFirmButtons(button);
-		}
-		if (!clicked)
-		{
-			setClicked(true)
-			RemoveStartingStyles(setBorderStyle, setTextStyle, setLogosStyle);
 		}
     }
+
+	let firmsInfoComponent = !clicked
+		? <FirmsInfoPlaceholder 
+			isLoading={loading}
+			firmsCount={firms.length}
+		/>
+		: <FirmsInfo selectedFirm={selectedFirm} isLoading={loading} setLoading={setLoading} /> 
 
     return (
         <div className="container-firms">
@@ -53,7 +40,11 @@ const Firms = () => {
 					<ul>
 						{
 							firms.map((firm) => (
-								<li key={firm.name}><button onClick={(e) => click(firm, e)}><h3>{firm.name}</h3></button></li>
+								<li key={firm.name}>
+									<button className={firm.name === selectedFirm.name ? 'active' : ''} onClick={() => click(firm)}>
+										<h3>{firm.name}</h3>
+									</button>
+								</li>
 							))
 						}
 						<li><button><h3>...</h3></button></li>
@@ -66,27 +57,8 @@ const Firms = () => {
 					<img src={require("../img/png/" + language.firms.map + ".png")} alt="Aula"/>
 				</section>
 				
-				<section style={borderStyle} className="firms-info">
-					<div style={logosStyle} className='image-container'>
-						<img style={ loading ? { display: 'block' } : { display: 'none' } } src={require("../img/png/placeholder.png")} alt="firmsLogo"/>
-						<img
-							src={'https://pkapi.onrender.com/api/firms/' + selectedFirm.id + '/image/1'}
-							style={ loading ? { display: 'none' } : { display: 'block' } }
-							onLoad={() => setLoading(false)}
-							alt="firmsLogo"
-						/>
-					</div>
-					<p style={textStyle}>
-						{
-							loading
-							?	language.firmList.Loading + loadingText
-							:	firms.length === 0
-								? 	language.firmList.Undefined
-								:	!clicked
-									? language.firmList.Guide
-									: (value === 'et' ? selectedFirm.estonianDescription : selectedFirm.englishDescription) ?? language.firmList.Guide 
-						}
-					</p>
+				<section className="firms-info">
+					{ firmsInfoComponent }
 				</section>
 			</div>
         </div>
@@ -95,40 +67,12 @@ const Firms = () => {
 
 export default Firms;
 
-function RemoveStyles() {
-	var arrayOfFirmNameButtons = document.getElementsByTagName("UL")[0];
-	for (let i = 0; i < arrayOfFirmNameButtons.getElementsByTagName("BUTTON").length; i++) {
-		arrayOfFirmNameButtons.getElementsByTagName("BUTTON")[i].style.cssText = '';
-	}
-}
-
-function RemoveStartingStyles(setBorderStyle, setTextStyle, setLogosStyle) {
-	setBorderStyle({border: '', borderStyle: '', borderColor: '', marginTop: ''});
-	setTextStyle({textAlign: '', fontSize: '', paddingTop: ''});
-	setLogosStyle({height: '', visibility: '', margin: ''});
-}
-
-function AddStylesToSelectedFirmButtons(button) {
-	button.currentTarget.style.backgroundColor = '#FF0063';
-}
-
 const loadFirms = async (setFirms, setLoading) => {
 	const response = await fetch('https://pkapi.onrender.com/api/firms');
 	const data = await response.json();
 
 	if (data) {
-		var promises = data.map(f => getFirm(f.id))
-		var result = await Promise.all(promises)
-		setFirms(result)
+		setFirms(data)
 		setLoading(false)
-	}
-}
-
-const getFirm = async (id) => {
-	const response = await fetch('https://pkapi.onrender.com/api/firms/' + id);
-	const data = await response.json();
-
-	if (data) {
-		return data
 	}
 }

@@ -37,7 +37,8 @@
         },
         "firmList": {
             "Loading": "Laeb",
-            "Guide": "Vajuta firma nimele, et näha infot.",
+            "Apology": "Vabandame ebamugavuste pärast",
+            "Guide": "Vajuta firma nimele, et näha infot",
             "Undefined": "Kuulutame peagi välja ettevõtted..."
         }
     },
@@ -79,7 +80,8 @@
         },
         "firmList": {
             "Loading": "Loading",
-            "Guide": "Press on a firms name to view info.",
+            "Apology": "We apologise for the inconvenience",
+            "Guide": "Press on a firms name to view info",
             "Undefined": "Announcing the firms soon..."
         }
     }
