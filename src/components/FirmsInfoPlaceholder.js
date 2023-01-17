@@ -24,7 +24,7 @@ const FirmsInfoPlaceholder = ({ isLoading, firmsCount }) => {
 			{
 				isLoading
 				?	language.firmList.Loading + loadingText +
-					(totalIntervalTime >= 10000 ? '\n' + language.firmList.Apology : '')
+					(totalIntervalTime >= 13000 ? '\n' + language.firmList.Apology : '')
 				:	firmsCount === 0
 					? 	language.firmList.Undefined
 					:	language.firmList.Guide 
