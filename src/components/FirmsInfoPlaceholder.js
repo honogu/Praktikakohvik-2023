@@ -14,22 +14,28 @@ const FirmsInfoPlaceholder = ({ isLoading, firmsCount }) => {
 				setLoadingText(setLoadingText => setLoadingText === ' . . .' ? '' : setLoadingText += ' .')
 				setTotalIntervalTime(setTotalIntervalTime => setTotalIntervalTime += 500)
 			}
-			else setLoadingText(setLoadingText => setLoadingText = '')
+			else 
+			{
+				setLoadingText(setLoadingText => setLoadingText = '')
+				setTotalIntervalTime(0)
+			}
 		}, 500);
 		return () => clearInterval(interval)
-    }, [isLoading, totalIntervalTime]);
+    }, [isLoading]);
 
     return (
-		<p className='info-placeholder'>
-			{
-				isLoading
-				?	language.firmList.Loading + loadingText +
-					(totalIntervalTime >= 13000 ? '\n' + language.firmList.Apology : '')
-				:	firmsCount === 0
-					? 	language.firmList.Undefined
-					:	language.firmList.Guide 
-			}
-		</p>
+		<section className='info-placeholder'>
+			<p>
+				{
+					isLoading
+					?	language.firmList.Loading + loadingText
+					:	firmsCount === 0
+						? 	language.firmList.Undefined
+						:	language.firmList.Guide 
+				}
+			</p>
+			<h3>{totalIntervalTime >= 15000 ? language.firmList.Apology : ''}</h3>
+		</section>
     )
 };
 
