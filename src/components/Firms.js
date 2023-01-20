@@ -20,7 +20,6 @@ const Firms = () => {
 		if (firm.id !== selectedFirm.id)
 		{
 			let filteredFirm = firms.filter(function(x) { return x.id === firm.id; });
-			setLoading(true)
 			setSelectedFirm(...filteredFirm)
 		}
     }
@@ -30,7 +29,7 @@ const Firms = () => {
 			isLoading={loading}
 			firmsCount={firms.length}
 		/>
-		: <FirmsInfo selectedFirm={selectedFirm} isLoading={loading} setLoading={setLoading} /> 
+		: <FirmsInfo selectedFirm={selectedFirm} /> 
 
     return (
         <div className="container-firms">
@@ -73,8 +72,8 @@ const loadFirms = async (setFirms, setLoading) => {
 
 	if (data) {
 		setFirms(data)
-		const promises = data.map(f => preloadImages(f.id))
 		setLoading(false)
+		const promises = data.map(f => preloadImages(f.id))
 		await Promise.all(promises)
 	}
 }

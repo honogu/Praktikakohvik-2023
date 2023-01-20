@@ -1,20 +1,21 @@
 import './FirmsInfo.css';
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { srcContext } from "../SrcContext.js";
 
-const FirmsInfo = ({ selectedFirm, isLoading, setLoading }) => {
+const FirmsInfo = ({ selectedFirm }) => {
     const { value, language } = useContext(srcContext);
+    const [ imageLoading, setImageLoading] = useState(true);
 
     return (
 		<>
-			<div className={ isLoading ? 'image-container loading' : 'image-container' }>
+			<div className={ imageLoading ? 'image-container loading' : 'image-container' }>
 				<img 
-					style={ isLoading ? { display: 'block' } : { display: 'none' } } 
+					style={ imageLoading ? { display: 'block' } : { display: 'none' } } 
 					src={require("../img/png/placeholder.png")} alt="firmsLogo"/>
 				<img
 					src={'https://pkapi.onrender.com/api/firms/' + selectedFirm.id + '/image/1'}
-					style={ isLoading ? { display: 'none' } : { display: 'block' } }
-					onLoad={() => setLoading(false)}
+					style={ imageLoading ? { display: 'none' } : { display: 'block' } }
+					onLoad={() => setImageLoading(false)}
 					alt="firmsLogo"
 				/>
 			</div>
