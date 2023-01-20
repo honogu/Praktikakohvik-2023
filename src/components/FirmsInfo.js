@@ -7,8 +7,10 @@ const FirmsInfo = ({ selectedFirm, isLoading, setLoading }) => {
 
     return (
 		<>
-			<div className='image-container'>
-				<img style={ isLoading ? { display: 'block' } : { display: 'none' } } src={require("../img/png/placeholder.png")} alt="firmsLogo"/>
+			<div className={ isLoading ? 'image-container loading' : 'image-container' }>
+				<img 
+					style={ isLoading ? { display: 'block' } : { display: 'none' } } 
+					src={require("../img/png/placeholder.png")} alt="firmsLogo"/>
 				<img
 					src={'https://pkapi.onrender.com/api/firms/' + selectedFirm.id + '/image/1'}
 					style={ isLoading ? { display: 'none' } : { display: 'block' } }
@@ -18,7 +20,10 @@ const FirmsInfo = ({ selectedFirm, isLoading, setLoading }) => {
 			</div>
 			<p>
 				{
-					(value === 'et' ? selectedFirm.estonianDescription : selectedFirm.englishDescription) ?? language.firmList.Guide 
+					(value === 'et' 
+						? selectedFirm.estonianDescription 
+						: selectedFirm.englishDescription) 
+						?? language.firmList.Guide 
 				}
 			</p>
 		</>
