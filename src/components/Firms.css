@@ -217,7 +217,7 @@
 
 	.container-grid {
 		grid-template-columns: 100px auto;
-		grid-template-rows: auto auto auto auto;
+		grid-template-rows: auto auto auto auto auto;
 	}
 	#firms-title {
 		grid-column: 1 / span 2;

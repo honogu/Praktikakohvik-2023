@@ -1,9 +1,9 @@
-.firms-info p {
+.firms-info .firms-text {
 	padding-left: 2px;
 	padding-right: 2px;
 	text-align: left;
 	white-space: pre-wrap;
-	word-wrap:break-word;
+	word-wrap: break-word;
 	text-overflow: ellipsis; 
 }
 
@@ -39,8 +39,8 @@
 }
 
 .firms-info img {
-	max-width:100%;
-	max-height:100%;
+	max-width: 100%;
+	max-height: 100%;
 	height: auto;
 }
 
@@ -56,9 +56,13 @@
 		font-size: 15px;
 	}
 
+	.firms-info .firms-text {
+		word-break: break-word;
+	}
+
 	.image-container {
 		width: 80%;
-		max-width: 250px;
+		max-width: 200px;
 		aspect-ratio: 3.5 / 1;
 	}
 }

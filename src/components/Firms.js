@@ -73,14 +73,14 @@ const loadFirms = async (setFirms, setLoading) => {
 	if (data) {
 		setFirms(data)
 		setLoading(false)
-		const promises = data.map(f => preloadImages(f.id))
-		await Promise.all(promises)
+		// const promises = data.map(f => preloadImages(f.id))
+		// await Promise.all(promises)
 	}
 }
 
-let images = []
-function preloadImages(id) {
-	let img = new Image()
-	img.src = 'https://pkapi.onrender.com/api/firms/' + id + '/image/1';
-	images.push(img)
-}
+// let images = []
+// function preloadImages(id) {
+// 	let img = new Image()
+// 	img.src = 'https://pkapi.onrender.com/api/firms/' + id + '/image/1';
+// 	images.push(img)
+// }
