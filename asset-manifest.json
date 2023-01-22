@@ -1,12 +1,12 @@
 {
   "files": {
     "main.css": "/Praktikakohvik-2023/static/css/main.39fe4001.css",
-    "main.js": "/Praktikakohvik-2023/static/js/main.09faeed7.js",
+    "main.js": "/Praktikakohvik-2023/static/js/main.d3e3d851.js",
     "static/js/787.d8261684.chunk.js": "/Praktikakohvik-2023/static/js/787.d8261684.chunk.js",
     "static/media/PK2022_0.JPG": "/Praktikakohvik-2023/static/media/PK2022_0.4e6eccb1ae60a5378ba4.JPG",
+    "static/media/PK2022_7.jpg": "/Praktikakohvik-2023/static/media/PK2022_7.ab4cfa4583cae6d51503.jpg",
     "static/media/PK2022_2.jpg": "/Praktikakohvik-2023/static/media/PK2022_2.db52d0757249bc39d53f.jpg",
     "static/media/PK2022_5.jpg": "/Praktikakohvik-2023/static/media/PK2022_5.a07071414cc7429a6365.jpg",
-    "static/media/PK2022_7.jpg": "/Praktikakohvik-2023/static/media/PK2022_7.493cae8531489996ccc5.jpg",
     "static/media/PK2022_3.jpg": "/Praktikakohvik-2023/static/media/PK2022_3.a7aef7289fb805769f0f.jpg",
     "static/media/PK2022_1.jpg": "/Praktikakohvik-2023/static/media/PK2022_1.4ab1af75033a529cc0c6.jpg",
     "static/media/PK2022_4.jpg": "/Praktikakohvik-2023/static/media/PK2022_4.28b2e8f893f2434da090.jpg",
@@ -25,11 +25,11 @@
     "static/media/ituk.svg": "/Praktikakohvik-2023/static/media/ituk.3137fddb03fcd53502124b55072a5969.svg",
     "static/media/geo-alt-fill.svg": "/Praktikakohvik-2023/static/media/geo-alt-fill.74cbbebd84c14464737336f23c4d96a4.svg",
     "main.39fe4001.css.map": "/Praktikakohvik-2023/static/css/main.39fe4001.css.map",
-    "main.09faeed7.js.map": "/Praktikakohvik-2023/static/js/main.09faeed7.js.map",
+    "main.d3e3d851.js.map": "/Praktikakohvik-2023/static/js/main.d3e3d851.js.map",
     "787.d8261684.chunk.js.map": "/Praktikakohvik-2023/static/js/787.d8261684.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.39fe4001.css",
-    "static/js/main.09faeed7.js"
+    "static/js/main.d3e3d851.js"
   ]
 }
