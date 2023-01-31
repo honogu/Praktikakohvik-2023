@@ -5,18 +5,33 @@ const minute = second * 60;
 const hour = minute * 60;
 const day = hour * 24;
 
+// const animateValue = (className, end, duration) => {
+//     if (end >= 100 || end <= 0) return;
+//     var current = 0;
+//     var obj = document.querySelectorAll(className);
+//     var stepTime = Math.abs(Math.floor(duration / end));
+//     var timer = setInterval(function() {
+//         current += 1;
+//         requestAnimationFrame(animateValue)
+//         obj.forEach(element => element.innerText = current);
+//         if (current === end) {
+//             clearInterval(timer);
+//         }
+//     }, stepTime);
+// }
 const animateValue = (className, end, duration) => {
     if (end >= 100 || end <= 0) return;
-    var current = 0;
+    let startTimestamp = null;
     var obj = document.querySelectorAll(className);
-    var stepTime = Math.abs(Math.floor(duration / end));
-    var timer = setInterval(function() {
-        current += 1;
-        obj.forEach(element => element.innerText = current);
-        if (current === end) {
-            clearInterval(timer);
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        obj.forEach(element => element.innerText =  Math.floor(progress * end));
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
         }
-    }, stepTime);
+    };
+    window.requestAnimationFrame(step);
 }
 const countdown = () => {
     const now = new Date().getTime();
@@ -38,27 +53,30 @@ const countdown = () => {
 }
 const myInterval = setInterval(countdown, 1000);
 
-var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && window['safari'].pushNotification));
 export const animateCountdown = () => {
-    console.log(isSafari)
-    document.querySelectorAll(".dayNr").forEach(element => element.innerText = isSafari);
-    if (isSafari) 
-    {
-        setTimeout(myInterval, 0);
-    }
-    else 
-    {
-        const now = new Date().getTime();
-        const gap = countDate - now;
-        var dayRange = Math.floor(gap / day);
-        var hourRange = Math.floor((gap % day) / hour);
-        var minuteRange = Math.floor((gap % hour) / minute);
-        var secondRange = Math.floor((gap % minute) / second);
-    
-        animateValue('.dayNr', dayRange, animationDuration);
-        animateValue('.hourNr', hourRange, animationDuration);
-        animateValue('.minuteNr', minuteRange, animationDuration);
-        animateValue('.secondNr', secondRange - animationDuration / 1000, animationDuration);
-        setTimeout(myInterval, animationDuration);
-    };
+    const now = new Date().getTime();
+    const gap = countDate - now;
+    var dayRange = Math.floor(gap / day);
+    var hourRange = Math.floor((gap % day) / hour);
+    var minuteRange = Math.floor((gap % hour) / minute);
+    var secondRange = Math.floor((gap % minute) / second);
+
+    animateValue('.dayNr', dayRange, animationDuration);
+    animateValue('.hourNr', hourRange, animationDuration);
+    animateValue('.minuteNr', minuteRange, animationDuration);
+    animateValue('.secondNr', secondRange - animationDuration / 1000, animationDuration);
+    setTimeout(myInterval, animationDuration);
 }
+
+// function animateValue2(obj, start, end, duration) {
+//     let startTimestamp = null;
+//     const step = (timestamp) => {
+//         if (!startTimestamp) startTimestamp = timestamp;
+//         const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+//         obj.innerHTML = Math.floor(progress * (end - start) + start);
+//         if (progress < 1) {
+//             window.requestAnimationFrame(step);
+//         }
+//     };
+//     window.requestAnimationFrame(step);
+// }
