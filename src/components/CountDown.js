@@ -43,6 +43,7 @@ export const animateCountdown = () => {
     if (isSafari) 
     {
         setTimeout(myInterval, 0);
+        document.querySelectorAll(".dayNr").forEach(element => element.innerText = isSafari);
     }
     else 
     {
