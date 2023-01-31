@@ -5,20 +5,6 @@ const minute = second * 60;
 const hour = minute * 60;
 const day = hour * 24;
 
-// const animateValue = (className, end, duration) => {
-//     if (end >= 100 || end <= 0) return;
-//     var current = 0;
-//     var obj = document.querySelectorAll(className);
-//     var stepTime = Math.abs(Math.floor(duration / end));
-//     var timer = setInterval(function() {
-//         current += 1;
-//         requestAnimationFrame(animateValue)
-//         obj.forEach(element => element.innerText = current);
-//         if (current === end) {
-//             clearInterval(timer);
-//         }
-//     }, stepTime);
-// }
 const animateValue = (className, end, duration) => {
     if (end >= 100 || end <= 0) return;
     let startTimestamp = null;
@@ -67,16 +53,3 @@ export const animateCountdown = () => {
     animateValue('.secondNr', secondRange - animationDuration / 1000, animationDuration);
     setTimeout(myInterval, animationDuration);
 }
-
-// function animateValue2(obj, start, end, duration) {
-//     let startTimestamp = null;
-//     const step = (timestamp) => {
-//         if (!startTimestamp) startTimestamp = timestamp;
-//         const progress = Math.min((timestamp - startTimestamp) / duration, 1);
-//         obj.innerHTML = Math.floor(progress * (end - start) + start);
-//         if (progress < 1) {
-//             window.requestAnimationFrame(step);
-//         }
-//     };
-//     window.requestAnimationFrame(step);
-// }
