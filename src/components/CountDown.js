@@ -40,10 +40,10 @@ const myInterval = setInterval(countdown, 1000);
 
 var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && window['safari'].pushNotification));
 export const animateCountdown = () => {
+    document.querySelectorAll(".dayNr").forEach(element => element.innerText = isSafari);
     if (isSafari) 
     {
         setTimeout(myInterval, 0);
-        document.querySelectorAll(".dayNr").forEach(element => element.innerText = isSafari);
     }
     else 
     {
