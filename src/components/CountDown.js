@@ -40,17 +40,23 @@ const myInterval = setInterval(countdown, 1000);
 
 var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && window['safari'].pushNotification));
 export const animateCountdown = () => {
-    if (!isSafari) return;
-    const now = new Date().getTime();
-    const gap = countDate - now;
-    var dayRange = Math.floor(gap / day);
-    var hourRange = Math.floor((gap % day) / hour);
-    var minuteRange = Math.floor((gap % hour) / minute);
-    var secondRange = Math.floor((gap % minute) / second);
-
-    animateValue('.dayNr', dayRange, animationDuration);
-    animateValue('.hourNr', hourRange, animationDuration);
-    animateValue('.minuteNr', minuteRange, animationDuration);
-    animateValue('.secondNr', secondRange - animationDuration / 1000, animationDuration);
-    setTimeout(myInterval, animationDuration);
+    if (isSafari) 
+    {
+        setTimeout(myInterval, 0);
+    }
+    else 
+    {
+        const now = new Date().getTime();
+        const gap = countDate - now;
+        var dayRange = Math.floor(gap / day);
+        var hourRange = Math.floor((gap % day) / hour);
+        var minuteRange = Math.floor((gap % hour) / minute);
+        var secondRange = Math.floor((gap % minute) / second);
+    
+        animateValue('.dayNr', dayRange, animationDuration);
+        animateValue('.hourNr', hourRange, animationDuration);
+        animateValue('.minuteNr', minuteRange, animationDuration);
+        animateValue('.secondNr', secondRange - animationDuration / 1000, animationDuration);
+        setTimeout(myInterval, animationDuration);
+    };
 }
