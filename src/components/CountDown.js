@@ -37,7 +37,10 @@ const countdown = () => {
     }
 }
 const myInterval = setInterval(countdown, 1000);
+
+var isSafari = /constructor/i.test(window.HTMLElement) || (function (p) { return p.toString() === "[object SafariRemoteNotification]"; })(!window['safari'] || (typeof safari !== 'undefined' && window['safari'].pushNotification));
 export const animateCountdown = () => {
+    if (!isSafari) return;
     const now = new Date().getTime();
     const gap = countDate - now;
     var dayRange = Math.floor(gap / day);
